@@ -1,3 +1,10 @@
+# Auto-install missing packages (for Streamlit Cloud safety)
+import subprocess
+import sys
+
+for pkg in ["plotly", "numpy", "pandas", "streamlit"]:
+    subprocess.run([sys.executable, "-m", "pip", "install", pkg])
+
 import streamlit as st
 import numpy as np
 import pandas as pd
